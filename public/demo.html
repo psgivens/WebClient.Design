@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="logo192.png" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="stylesheet" type="text/css" href="skin/css/sample.css">
+  <link rel="stylesheet" type="text/css" href="skin/css/AppColors.css">
+  <link rel="stylesheet" type="text/css" href="skin/css/App.css">
+  <link rel="stylesheet" type="text/css" href="skin/css/AppLargeScreens.css">
+  <link rel="stylesheet" type="text/css" href="skin/css/AppSmallScreens.css">
+
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>React App</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand"><a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+          data-target="my-important-menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span
+            aria-hidden="true"></span></a></div>
+      <div class="navbar-menu" id="my-important-menu">
+        <div class="navbar-end"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/Login">Login</a>
+        </div>
+      </div>
+    </nav>
+    <div id='authenticated'>
+      <aside id="sidebar">
+        This is a sidebar
+      </aside>
+
+      <div class="appcontent">
+        This is the app content
+        <div class="container-fluid">
+          <section class="section">
+            <div class="container box">
+              <input type="text" label="Username" name="username" placeholder="Enter a value"
+                value='this.state.username' size='30'  />
+              <input type="password" label="Password" name="password" placeholder="Enter a value"
+                value='this.state.password' size='30'  />
+              <button text="Login" >Login</button>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="container box">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>isAuthenticated</td>
+                    <td>{ JSON.stringify(this.props.isAuthenticated) }</td>
+                  </tr>
+                  <tr>
+                    <td>raw auth</td>
+                    <td>
+                      <div class="textValue">{ this.props.token }</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Header Claims</td>
+                    <td>
+                      <div class="textValue">{ JSON.stringify(this.props.headerClaims) }</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Payload Claims</td>
+                    <td>
+                      <div class="textValue">{ JSON.stringify(this.props.payloadClaims) }</div>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+          </section>
+        </div>
+
+      </div>
+    </div>
+    <aside id="statusbar">
+      (1) | (9) | (7)
+    </aside>
+
+
+  </div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+</html>
