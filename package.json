@@ -17,12 +17,15 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "redux": "^4.0.4",
     "typescript": "3.7.2"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o public/",
+    "build-src-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src",
+    "build-public-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o public/ ",
+    "build-css": "npm run build-src-css && npm run build-public-css",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src   --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
