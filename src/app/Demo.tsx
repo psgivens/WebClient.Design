@@ -35,7 +35,6 @@ class DemoComponent extends React.Component<ThisProps, ComponentState> {
     public render() {
         return (
             <>
-
                 <nav className="navbar" role="navigation" aria-label="main navigation">
                     <div className="navbar-brand">
                         <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="my-important-menu" href="/" >
@@ -58,7 +57,7 @@ class DemoComponent extends React.Component<ThisProps, ComponentState> {
 
                     <div className="appcontent">
                         This is the app content
-          <div className="container-fluid" >
+                        <div className="container-fluid" >
                             <section className="section">
                                 <div className="container box">
 

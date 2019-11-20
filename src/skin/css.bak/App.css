@@ -1,0 +1,52 @@
+@import url(AppColors.css);
+@import url(AppLargeScreens.css);
+/* 
+ * Common to large and small layouts
+ * * Font sizes
+ * * Text alignment
+ * * Logo sizes
+ */
+@import url(AppSmallScreens.css);
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.App-title {
+  font-size: 1.5em; }
+
+.App-intro {
+  font-size: large; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.blade-title {
+  padding: 5px; }
+
+a.navbar-link {
+  background: white; }
+
+#statusbar {
+  padding: 5px; }
+
+.App {
+  text-align: center; }
+
+.App-logo {
+  height: 40vmin; }
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white; }
+
+.App-link {
+  color: #09d3ac; }

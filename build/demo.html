@@ -40,17 +40,11 @@
           data-target="my-important-menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span
             aria-hidden="true"></span></a></div>
       <div class="navbar-menu" id="my-important-menu">
-        <div class="navbar-end">
-          <div>
-            <a class="navbar-item" href="/">Home</a>
-          </div>
-          <div>
-            <a class="navbar-item" href="/Login">Login</a>
-          </div>
+        <div class="navbar-end"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/Login">Login</a>
         </div>
       </div>
     </nav>
-    <div id='main'>
+    <div id='authenticated'>
       <aside id="sidebar">
         This is a sidebar
       </aside>
@@ -61,10 +55,10 @@
           <section class="section">
             <div class="container box">
               <input type="text" label="Username" name="username" placeholder="Enter a value"
-                value='this.state.username' size='30' />
+                value='this.state.username' size='30'  />
               <input type="password" label="Password" name="password" placeholder="Enter a value"
-                value='this.state.password' size='30' />
-              <button text="Login">Login</button>
+                value='this.state.password' size='30'  />
+              <button text="Login" >Login</button>
             </div>
           </section>
 
@@ -110,12 +104,12 @@
 
       </div>
     </div>
-  </div>
     <aside id="statusbar">
       (1) | (9) | (7)
     </aside>
 
 
+  </div>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

@@ -25,7 +25,7 @@
   "scripts": {
     "build-src-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src",
     "build-public-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o public/ ",
-    "build-css": "npm run build-src-css && npm run build-public-css",
+    "build-css": "npm run build-public-css && npm run build-src-css",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src   --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",

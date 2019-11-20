@@ -4,76 +4,89 @@
 // html
 // -- body
 // ---- #root
+// ------ #header 
 // ------ #navbar (not sized)
-// ------ #authenticated (optional)
+// -------- #navbar-brand
+// -------- #navbar-menu
+// ------ #main (optional)
 // -------- #sidebar
 // -------- #appcontent
 // ---------- #blade ("blade", "blade full")
 // ------------ #blade-title
 // ------------ #blade-body
-// -------- #statusbar
+// ---- #statusbar
 
-// TODO: Rename "authenticated" to something more appropriate
+// TODO: Rename "main" to something more appropriate
 
-html, body {
-  overflow: hidden;
-}
+// html, body {
+//   overflow: hidden;
+// }
 
-html,body,#root { height:100%; }
-
-.App {
-  text-align: center;
-}
-
-.App-header {
-  height: 150px;
-  padding: 20px;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-.box {
-  width: 600px;
-  margin: 10px 10px 10px 10px;
-}
-
-#authenticated {  
+html,body,#root { 
+  padding: 0px;
+  margin: 0px;
   position: absolute;
-  top: 52px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-}
-
-
-#sidebar {
-  width: 300px; 
-  overflow: auto;
-  padding: 20px;
-  vertical-align: top;
-}
-
-.blade-body {
-  overflow: auto;
-}
-
-.blade-body.pomodoros {
-  position: absolute;
-  top: 35px;
+  top: 0px;
   bottom: 0px;
   right: 0px;
   left: 0px;
 }
 
 #root {
-  overflow: hidden;
+  bottom: 45px;
+  padding: 0;
+}
+
+
+// Not currently used. 
+#header {
+  height: 52px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border:  1px solid black;
+  pad: 1em;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 52px;
+  flex-shrink: 0;
+  align-items: stretch;
+}
+
+.navbar-end {  
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1em; 
+  align-items: center;
+  border: 1px solid Red;
+  min-height: 52px;
+}
+
+.navbar-end a {
+  padding-left: 1em;  
+}
+
+#main {  
   position: absolute;
-  top: 0px;
+  top: 52px;
   bottom: 0px;
   left: 0px;
   right: 0px;
+  display: flex; // parent of other content
+}
+#main aside {
+  border: 0px solid blue;
+}
+#main div {
+  flex-grow: 1;
+  border: 1px solid black;
+}
+
+.appcontent {
+  overflow: auto;
 }
 
 
@@ -87,52 +100,102 @@ html,body,#root { height:100%; }
   height: 35px;
 }
 
-.pomodoro-items {
-  width: 100%;
-  display: block;
-}
-
-.list-item {
-  padding: 0px 5px 10px 5px;
-}
-
-#sidebar, .blade {
-  position: absolute;
-  top: 0px;
-  bottom: 0px; }
-
-.appcontent {
-  position: absolute;
-  top: 0px;
-  bottom: 35px; 
-  left: 301px;
-  right: 0px;
-}
 
 
-.blade.listings {  
-  width: 400px;
-  left: 0px;
-}
 
-.blade.details {
-  overflow: auto;
-  left: 400px;
-  right: 0px;  
-}
 
-.blade.full {
-  overflow: auto;
-  left: 0px;
-  right: 0px;  
-}
 
-.menu-list {
-  line-height: 1.25; }
-.menu-list a {
-  display: block;
-  padding: 0.5em 0.75em; }
-.menu-list li ul {
-  margin: 0.75em;
-  padding-left: 0.75em; }
+
+
+
+
+
+
+// #sidebar {
+//   width: 300px; 
+//   overflow: auto;
+//   padding: 20px;
+//   vertical-align: top;
+// }
+
+// .blade-body {
+//   overflow: auto;
+// }
+
+// .blade-body.pomodoros {
+//   position: absolute;
+//   top: 35px;
+//   bottom: 0px;
+//   right: 0px;
+//   left: 0px;
+// }
+
+// #root {
+//   overflow: hidden;
+//   position: absolute;
+//   top: 0px;
+//   bottom: 0px;
+//   left: 0px;
+//   right: 0px;
+// }
+
+
+
+
+// #statusbar {
+//   position: absolute;
+//   bottom: 0px;
+//   left: 0px;
+//   right: 0px;
+//   height: 35px;
+// }
+
+// .pomodoro-items {
+//   width: 100%;
+//   display: block;
+// }
+
+// .list-item {
+//   padding: 0px 5px 10px 5px;
+// }
+
+// #sidebar, .blade {
+//   position: absolute;
+//   top: 0px;
+//   bottom: 0px; }
+
+// .appcontent {
+//   position: absolute;
+//   top: 0px;
+//   bottom: 35px; 
+//   left: 301px;
+//   right: 0px;
+// }
+
+
+// .blade.listings {  
+//   width: 400px;
+//   left: 0px;
+// }
+
+// .blade.details {
+//   overflow: auto;
+//   left: 400px;
+//   right: 0px;  
+// }
+
+// .blade.full {
+//   overflow: auto;
+//   left: 0px;
+//   right: 0px;  
+// }
+
+// .menu-list {
+//   line-height: 1.25; }
+// .menu-list a {
+//   display: block;
+//   padding: 0.5em 0.75em; }
+// .menu-list li ul {
+//   margin: 0.75em;
+//   padding-left: 0.75em; }
 
