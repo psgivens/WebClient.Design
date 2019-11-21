@@ -1,11 +1,14 @@
 
 import * as React from 'react'
-// import * as container from 'src/jscommon/components/loginComponent/loginComponentContainer'
-// import Button from 'src/jscommon/controls/Button'
-// import TextInput from 'src/jscommon/controls/TextInput'
-// import MainMenu from './MainMenu';
 
-type ThisProps = {}
+import TextInput from '../controls/TextInput';
+import Button from '../controls/Button';
+
+import NavBar from './NavBar';
+
+type ThisProps = {
+    // username: string
+}
 //   container.StateProps
 //   & container.ConnectedDispatch
 //   & container.AttributeProps
@@ -35,60 +38,80 @@ class DemoComponent extends React.Component<ThisProps, ComponentState> {
     public render() {
         return (
             <>
-                <nav className="navbar" role="navigation" aria-label="main navigation">
-                    <div className="navbar-brand">
-                        <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="my-important-menu" href="/" >
-                            <span aria-hidden="true" />
-                            <span aria-hidden="true" />
-                            <span aria-hidden="true" />
-                        </a>
-                    </div>
-                    <div className="navbar-menu" id="my-important-menu">
-                        <div className="navbar-end">
-                            <a className="navbar-item" href="/">Home</a><a className="navbar-item" href="/Login">Login</a>
-                        </div>
-                    </div>
-                </nav>
+                <NavBar />
 
-                <div id='authenticated'>
-                    <aside id="sidebar">
+                <div id='main'>
+                    <aside id="sidebar1" className="sidebar">
                         This is a sidebar
                     </aside>
 
-                    <div className="appcontent">
-                        This is the app content
-                        <div className="container-fluid" >
+                    <section className="blade listings">
+                        <div className="blade-title">
+                            Pomodoros
+                        </div>
+                        <div className="blade-body">
+                            <div className="list-item" >
+                                "pomodoro.planned}",
+                                "pomodoro.actual}",
+                                "startTime}",
+                                "pomodoro.status}"
+                                    <br />
+                                <Button onClick={this.onSubmitPressed} text="Login" />
+                                <Button onClick={this.onSubmitPressed} text="Login" />
+                                <Button onClick={this.onSubmitPressed} text="Login" />
+                            </div>
+                            <div className="list-item" >
+                                "pomodoro.planned}",
+                                "pomodoro.actual}",
+                                "startTime}",
+                                "pomodoro.status}"
+                                    <br />
+                                <Button onClick={this.onSubmitPressed} text="Login" />
+                                <Button onClick={this.onSubmitPressed} text="Login" />
+                                <Button onClick={this.onSubmitPressed} text="Login" />
+                            </div>
+                            <div className="list-item" >
+                                "pomodoro.planned}",
+                                "pomodoro.actual}",
+                                "startTime}",
+                                "pomodoro.status}"
+                                    <br />
+                                <Button onClick={this.onSubmitPressed} text="Login" />
+                                <Button onClick={this.onSubmitPressed} text="Login" />
+                                <Button onClick={this.onSubmitPressed} text="Login" />
+                            </div>
+                        </div>
+                    </section>
+
+                    <div className="blade">
+                        <div className="blade-title">
+                            This is the app content
+                        </div>
+                        <div className="blade-body">
                             <section className="section">
-                                <div className="container box">
-
-                                    <input type="text" name="username" placeholder="Enter a value"
-                                        value='this.state.username' size={30} />
-                                    <input type="password" name="password" placeholder="Enter a value"
-                                        value='this.state.password' size={30} />
-                                    {/* <button type="button" className="btn btn-primary" text="Login" /> */}
-
-                                    {/* <TextInput
-                  inputType="text"
-                  label="Username"
-                  name="username"
-                  placeholder="Enter a value"
-                  value={this.state.username}
-                  size={30}
-                  onChange={this.onUsernameChanged} />
-                <TextInput
-                  inputType="password"
-                  label="Password"
-                  name="password"
-                  placeholder="Enter a value"
-                  value={this.state.password}
-                  size={30}
-                  onChange={this.onPasswordChanged} />
-                <Button onClick={this.onSubmitPressed} text="Login" /> */}
+                                <div className="box">
+                                    <TextInput
+                                        inputType="text"
+                                        label="Username"
+                                        name="username"
+                                        placeholder="Enter a value"
+                                        value={this.state.username}
+                                        size={30}
+                                        onChange={this.onUsernameChanged} />
+                                    <TextInput
+                                        inputType="password"
+                                        label="Password"
+                                        name="password"
+                                        placeholder="Enter a value"
+                                        value={this.state.password}
+                                        size={30}
+                                        onChange={this.onPasswordChanged} />
+                                    <Button onClick={this.onSubmitPressed} text="Login" />
                                 </div>
                             </section>
 
                             <section className="section">
-                                <div className="container box">
+                                <div className="box">
                                     <table className="table">
                                         <thead>
                                             <tr>
@@ -120,24 +143,22 @@ class DemoComponent extends React.Component<ThisProps, ComponentState> {
                                 </div>
                             </section>
                         </div>
-
                     </div>
                 </div>
                 <aside id="statusbar">
                     (1) | (9) | (7)
-      </aside>
-
+                </aside>
             </>)
     }
 
     private onUsernameChanged(event: React.SyntheticEvent<HTMLInputElement>) {
         event.preventDefault()
-        // this.setState({ ...this.state, username: event.currentTarget.value })    
+        this.setState({ ...this.state, username: event.currentTarget.value })
     }
 
     private onPasswordChanged(event: React.SyntheticEvent<HTMLInputElement>) {
         event.preventDefault()
-        // this.setState({ ...this.state, password: event.currentTarget.value })    
+        this.setState({ ...this.state, password: event.currentTarget.value })
     }
 
     private onSubmitPressed(event: React.SyntheticEvent<HTMLButtonElement>) {

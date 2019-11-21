@@ -23,14 +23,8 @@
   to {
     transform: rotate(360deg); } }
 
-.blade-title {
-  padding: 5px; }
-
 a.navbar-link {
   background: white; }
-
-#statusbar {
-  padding: 5px; }
 
 .App {
   text-align: center; }

@@ -50,26 +50,73 @@
         </div>
       </div>
     </nav>
+
     <div id='main'>
-      <aside id="sidebar">
+      <aside id="sidebar1" class="sidebar">
         This is a sidebar
       </aside>
 
-      <div class="appcontent">
-        This is the app content
-        <div class="container-fluid">
+      <section class="blade listings">
+        <div class="blade-title">
+          Pomodoros
+        </div>
+        <div class="blade-body">
+          <div class="list-item" key=1>
+            "{pomodoro.planned}",
+            "{pomodoro.actual}",
+            "{startTime}",
+            "{pomodoro.status}"
+            <br />
+            <button text="Login">Login</button>
+            <button text="Login">Login</button>
+            <button text="Login">Login</button>
+          </div>
+          <div class="list-item" key=1>
+            "{pomodoro.planned}",
+            "{pomodoro.actual}",
+            "{startTime}",
+            "{pomodoro.status}"
+            <br />
+            <button text="Login">Login</button>
+            <button text="Login">Login</button>
+            <button text="Login">Login</button>
+          </div>
+          <div class="list-item" key=1>
+            "{pomodoro.planned}",
+            "{pomodoro.actual}",
+            "{startTime}",
+            "{pomodoro.status}"
+            <br />
+            <button text="Login">Login</button>
+            <button text="Login">Login</button>
+            <button text="Login">Login</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="blade">
+        <div class="blade-title">
+          This is the app content
+        </div>
+        <div class="blade-body">
           <section class="section">
-            <div class="container box">
-              <input type="text" label="Username" name="username" placeholder="Enter a value"
-                value='this.state.username' size='30' />
-              <input type="password" label="Password" name="password" placeholder="Enter a value"
-                value='this.state.password' size='30' />
+            <div class="box">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" label="Username" name="username" placeholder="Enter a value"
+                  value='this.state.username' size='30' />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" label="Password" name="password" placeholder="Enter a value"
+                  value='this.state.password' size='30' />
+              </div>
               <button text="Login">Login</button>
             </div>
           </section>
 
           <section class="section">
-            <div class="container box">
+            <div class="box">
               <table class="table">
                 <thead>
                   <tr>
@@ -107,13 +154,12 @@
             </div>
           </section>
         </div>
-
       </div>
     </div>
   </div>
-    <aside id="statusbar">
-      (1) | (9) | (7)
-    </aside>
+  <aside id="statusbar">
+    (1) | (9) | (7)
+  </aside>
 
 
   <!--

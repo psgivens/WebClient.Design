@@ -11,17 +11,18 @@
 // ------ #main (optional)
 // -------- #sidebar
 // -------- #appcontent
-// ---------- #blade ("blade", "blade full")
+// ---------- #blade 
 // ------------ #blade-title
 // ------------ #blade-body
 // ---- #statusbar
 
-// TODO: Rename "main" to something more appropriate
+$header-height: 52px;
+$navbar-height: 52px;
+$statusbar-padding: 5px;
+$statusbar-content-height: 35px;
+$statusbar-height: $statusbar-content-height - (2*$statusbar-padding);
 
-// html, body {
-//   overflow: hidden;
-// }
-
+// Necessary for scroll bars embedded in panels
 html,body,#root { 
   padding: 0px;
   margin: 0px;
@@ -32,15 +33,10 @@ html,body,#root {
   left: 0px;
 }
 
-#root {
-  bottom: 45px;
-  padding: 0;
-}
-
 
 // Not currently used. 
 #header {
-  height: 52px;
+  height: $header-height;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -48,147 +44,105 @@ html,body,#root {
   pad: 1em;
 }
 
+
+
+
+/* 
+ * Navigation bar is the first section in the absolute layout.
+ */
 .navbar {
   display: flex;
   justify-content: flex-end;
-  min-height: 52px;
+  min-height: $navbar-height;
   flex-shrink: 0;
   align-items: stretch;
 }
-
 .navbar-end {  
   display: flex;
   justify-content: flex-end;
   padding-right: 1em; 
   align-items: center;
-  border: 1px solid Red;
-  min-height: 52px;
+  min-height: $navbar-height;
 }
-
 .navbar-end a {
   padding-left: 1em;  
 }
 
+
+
+
+
+/* 
+ * Main section includes all blades. 
+ */
 #main {  
   position: absolute;
-  top: 52px;
-  bottom: 0px;
+  top: $navbar-height;
+  bottom: $statusbar-height;
   left: 0px;
   right: 0px;
   display: flex; // parent of other content
 }
-#main aside {
-  border: 0px solid blue;
-}
-#main div {
-  flex-grow: 1;
-  border: 1px solid black;
-}
-
-.appcontent {
+#main aside.sidebar {
   overflow: auto;
 }
+#main aside#sidebar1 {
+  width: 300px;
+  overflow: auto;
+  // order: 1; // Used as a demonstration
+  padding: 20px;
+  vertical-align: top;
+}
+#main .blade {
+  overflow: auto;
+  flex-grow: 0;
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+}
+#main .blade:last-child {
+  flex-grow: 1;
+}
+#main .blade.listings {  
+  width: 400px;
+}
+#main .blade .blade-title {
+  padding: 5px;
+}
+#main .blade .blade-body {
+  overflow: auto;
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
 
 
 
 
+/* 
+ * Status bar is the last section of the page.
+ */
 #statusbar {
   position: absolute;
   bottom: 0px;
   left: 0px;
   right: 0px;
-  height: 35px;
+  height: $statusbar-height;
+  padding: 0px;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-// #sidebar {
-//   width: 300px; 
-//   overflow: auto;
-//   padding: 20px;
-//   vertical-align: top;
-// }
-
-// .blade-body {
-//   overflow: auto;
-// }
-
-// .blade-body.pomodoros {
-//   position: absolute;
-//   top: 35px;
-//   bottom: 0px;
-//   right: 0px;
-//   left: 0px;
-// }
-
-// #root {
-//   overflow: hidden;
-//   position: absolute;
-//   top: 0px;
-//   bottom: 0px;
-//   left: 0px;
-//   right: 0px;
-// }
-
-
-
-
-// #statusbar {
-//   position: absolute;
-//   bottom: 0px;
-//   left: 0px;
-//   right: 0px;
-//   height: 35px;
-// }
-
-// .pomodoro-items {
-//   width: 100%;
-//   display: block;
-// }
-
-// .list-item {
-//   padding: 0px 5px 10px 5px;
-// }
-
-// #sidebar, .blade {
-//   position: absolute;
-//   top: 0px;
-//   bottom: 0px; }
-
-// .appcontent {
-//   position: absolute;
-//   top: 0px;
-//   bottom: 35px; 
-//   left: 301px;
-//   right: 0px;
-// }
-
-
-// .blade.listings {  
-//   width: 400px;
-//   left: 0px;
-// }
-
-// .blade.details {
-//   overflow: auto;
-//   left: 400px;
-//   right: 0px;  
-// }
-
-// .blade.full {
-//   overflow: auto;
-//   left: 0px;
-//   right: 0px;  
-// }
+/*
+ * Undecorated elements in demo
+ * * .box, .form-group, .section
+ */
 
 // .menu-list {
 //   line-height: 1.25; }
