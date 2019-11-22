@@ -20,7 +20,7 @@ $header-height: 52px;
 $navbar-height: 52px;
 $statusbar-padding: 5px;
 $statusbar-content-height: 35px;
-$statusbar-height: $statusbar-content-height - (2*$statusbar-padding);
+$statusbar-height: ($statusbar-content-height - ($statusbar-padding + $statusbar-padding)) + 0px;
 
 // Necessary for scroll bars embedded in panels
 html,body,#root { 
@@ -78,7 +78,7 @@ html,body,#root {
 #main {  
   position: absolute;
   top: $navbar-height;
-  bottom: $statusbar-height;
+  bottom: $statusbar-content-height;
   left: 0px;
   right: 0px;
   display: flex; // parent of other content
@@ -134,7 +134,7 @@ html,body,#root {
   left: 0px;
   right: 0px;
   height: $statusbar-height;
-  padding: 0px;
+  padding: ($statusbar-padding) + 0px;
 }
 
 
