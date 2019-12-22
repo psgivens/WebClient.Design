@@ -6,18 +6,18 @@ param (
     $RepoName
 )
 
-$repodir = "$env:PLATFORM_REPOS/$RepoName"
+$repodir = "$env:BESPIN_REPOS/$RepoName"
 
 if (Test-Path $repodir) {
     @(
         "skin"
         "controls"
     ) | %{
-        $srcdir = "$env:PLATFORM_REPOS/WebClient.Design/src/$_"
-        $targetsrcdir = "$env:PLATFORM_REPOS/$RepoName/src/"
+        $srcdir = "$env:BESPIN_REPOS/WebClient.Design/src/$_"
+        $targetsrcdir = "$env:BESPIN_REPOS/$RepoName/src/"
         Copy-Item -Recurse -Force $srcdir $targetsrcdir    
 
-        $targetdir = "$env:PLATFORM_REPOS/$RepoName/src/$_"
+        $targetdir = "$env:BESPIN_REPOS/$RepoName/src/$_"
         chmod -R a-w $targetdir
     }
 } else {
